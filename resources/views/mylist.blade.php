@@ -3,9 +3,8 @@
 @section('content')
 
 <main class="container mx-auto px-64">
-    <div class="mt-0 grid grid-cols-1 gap-10 container">
-       <a href="set_event" class="btn btn-success mt-12 mx-auto rounded-3xl border border-gray-400 flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white mr-0 shadow-md">イベント作成</a>
-
+    <div class="mt-10 grid grid-cols-1 gap-10 container">
+    <span class="text-2xl text-gray-500">マイリスト</span>
         @foreach($events as $event)
         
         <div class="mx-auto max-w-screen-md h-64 border border-blue-200 rounded-lg bg-white w-full">
@@ -30,16 +29,8 @@
                     </div>
                 
                 <div class="left-info ml-auto mr-10 mt-4 flex flex-col">
-                    @auth
-                        <form method="POST" action="{{ route('add', $event->id) }}">
-                        @csrf
-                            <button type="submit" class="btn btn-success bg-indigo-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200">マイリストに追加</button>
-                        </form>
-                    @endauth
-
-                    <!-- <a href="#" class="bg-indigo-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200"><span class="text-gray-600 text-sm flex justify-center">マイリストに追加</span></a>  -->
-                    <!-- ボタン出し入れできるようにする -->
-                    <a href="detail/{{ $event->id }}" class="bg-red-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-red-200"><span class="text-gray-600 text-sm flex justify-center">詳しく見る</span></a> 
+                    <a href="#" class="bg-red-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-red-200"><span class="text-gray-600 text-sm flex justify-center">削除</span></a>
+                    <a href="detail/{{ $event->id }}" class="bg-gray-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-gray-200"><span class="text-gray-600 text-sm flex justify-center">詳しく見る</span></a> 
                 </div>
             </div>
         </div>

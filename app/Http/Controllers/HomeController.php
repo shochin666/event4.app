@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -16,6 +19,12 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    // public function eventInfo()
+    // {
+    //     $event = new Event;
+    //     return view('home', 'event');
+    // }
+
     /**
      * Show the application dashboard.
      *
@@ -23,6 +32,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $_data = new Event();
+        $data = $_data->getData();
+        return view('home',['data' => $data]);
     }
+    
 }

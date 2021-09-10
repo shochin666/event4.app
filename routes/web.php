@@ -17,8 +17,25 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EventController@index')->name('home');
 
-Route::get('/{any}', function(){
-    return view('App');
-})->where('any', '.*');
+Route::get('detail/{id}', 'EventController@showDetail');
+
+Route::post('detail/{id}', 'EventController@join');
+
+Route::get('/set_event', 'EventController@show')->name('setEvent.show');
+Route::post('/set_event', 'EventController@post')->name('setEvent.post');
+
+Route::get('/set_event/confirm', 'EventController@confirm')->name('setEvent.confirm');
+Route::post('/set_event/confirm', 'EventController@send')->name('setEvent.send');
+
+Route::get('/set_event/complete', 'EventController@complete')->name('setEvent.complete');
+
+
+// Route::get('/{any}', function(){
+//     return view('App');
+// })->where('any', '.*');
+
+Route::middleware('auth')->post('/mylist', 'EventController@add')->name('add');
+
+Route::middleware('auth')->get('/mylist', 'MylistController@index');
