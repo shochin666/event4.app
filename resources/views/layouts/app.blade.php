@@ -1,76 +1,4 @@
-<!-- <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-white">
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container px-5 pt-3 pb-3 flex flex-row">
-                <a class="navbar-brand text-gray-500 text-2xl" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                </button>
-
-                    <ul class="navbar-nav ml-auto">
-
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <ul class="flex flex-row">
-                        <li class="mr-8 mt-2">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle hover:text-blue-500" href="/mylist" >
-                                マイリスト
-                            </li>
-                            <li class="mr-8 mt-2">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle hover:text-blue-500" href="#" >
-                                    {{ Auth::user()->name }} 
-                            </li>
-                            <li>
-                                <div aria-labelledby="navbarDropdown">
-                                    <a class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        </ul>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-
-        <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
@@ -84,12 +12,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
   </head>
 
   <body>
     <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
-      <a href="#" class="p-2 mr-4 inline-flex items-center">
-        <svg
+      <!-- <a href="#" class="p-2 mr-4 inline-flex items-center"> -->
+      <a class="p-2 mr-4 inline-flex items-center text-white" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+        <!-- <svg
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           class="fill-current text-white h-8 w-8 mr-2"
@@ -100,8 +33,17 @@
         </svg>
         <span class="text-xl text-white font-bold uppercase tracking-wide"
           >Talwind CSS</span
-        >
-      </a>
+        > -->
+        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
       <button
         class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
         data-target="#navigation"
@@ -115,44 +57,29 @@
         <div
           class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto"
         >
+        <a
+            href="/mylist"
+            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+          >
+            <span>マイリスト</span>
           <a
             href="#"
             class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
           >
-            <span>Home</span>
+            <span>{{ Auth::user()->name }}</span>
           </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>About</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Services</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Gallery</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Products</span>
-          </a>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>Contact Us</span>
-          </a>
+          <a class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white ml-2" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('ログアウト') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
         </div>
       </div>
+      @endguest
     </nav>
 
     <main class="py-4">
