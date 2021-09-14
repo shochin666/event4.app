@@ -2,18 +2,18 @@
 
 @section('content')
 
-<main class="container mx-auto px-64">
-    <div class="mt-0 grid grid-cols-1 gap-10 container">
-       <a href="set_event" class="btn btn-success mt-12 mx-auto rounded-3xl border border-gray-400 flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white mr-0 shadow-md">イベント作成</a>
+<main class="px-auto w-full m-0 p-0">
+    <div class="mt-0 grid grid-cols-1 gap-10  w-full px-10 lg:px-0">
+       <a href="set_event" class="btn btn-success mt-12 mx-auto rounded-3xl border border-gray-400 flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white md:mr-8 mr-40 shadow-md">イベント作成</a>
 
         @foreach($events as $event)
         
         <div class="mx-auto max-w-screen-md h-64 border border-blue-200 rounded-lg bg-white w-full">
             
-            <div class="flex flex-row h-full">
+            <div class="flex flex-row w-full">
                 
                 <div class="right-info flex flex-col"> 
-                    <div class="up flex flex-col mt-4 mr-36">
+                    <div class="up flex flex-col mt-4 ">
                         <div class="pl-6 text-gray-500 text-lg">開催日 {{ $event->date }}</div>
                         <div class="mt-1 ml-8 text-gray-500 text-md flex flex-col">
                             <span>{{ $event->place }}</span>
@@ -33,11 +33,10 @@
                     @auth
                         <form method="POST" action="{{ route('add', $event->id) }}">
                         @csrf
-                            <button type="submit" class="btn btn-success bg-indigo-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200">マイリストに追加</button>
+                            <button type="submit" class="btn btn-success bg-indigo-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200 text-gray-600 text-sm">マイリストに追加</button>
                         </form>
                     @endauth
 
-                    <!-- <a href="#" class="bg-indigo-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200"><span class="text-gray-600 text-sm flex justify-center">マイリストに追加</span></a>  -->
                     <!-- ボタン出し入れできるようにする -->
                     <a href="detail/{{ $event->id }}" class="bg-red-100 w-36 mt-2 p-2 rounded-xl shadow-md hover:bg-red-200"><span class="text-gray-600 text-sm flex justify-center">詳しく見る</span></a> 
                 </div>

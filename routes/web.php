@@ -36,6 +36,6 @@ Route::get('/set_event/complete', 'EventController@complete')->name('setEvent.co
 //     return view('App');
 // })->where('any', '.*');
 
-Route::middleware('auth')->post('/mylist', 'EventController@add')->name('add');
+Route::middleware('auth')->post('/mylist/{event}', 'EventController@add')->name('add');
 
 Route::middleware('auth')->get('/mylist', 'MylistController@index');
