@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
+    <nav class="flex items-center bg-white p-3 flex-wrap">
       <!-- <a href="#" class="p-2 mr-4 inline-flex items-center"> -->
-      <a class="p-2 mr-4 inline-flex items-center text-white" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+      <a class="w-auto px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block" href="{{ url('/') }}">
+      <span class="text-2xl">{{ config('app.name', 'Laravel') }}</span>
                 </a>
         <!-- <svg
           viewBox="0 0 24 24"
@@ -45,39 +45,40 @@
                             @endif
                         @else
       <button
-        class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        class="text-gray-500 inline-flex p-3 hover:bg-gray-500 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
         data-target="#navigation"
       >
-        <i class="material-icons">menu</i>
+        <i class="material-icons sm:text-5xl">menu</i>
       </button>
       <div
         class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
         id="navigation"
       >
-        <div
-          class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto"
-        >
-        <a
-            href="/mylist"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>マイリスト</span>
-          <a
-            href="#"
-            class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
-          >
-            <span>{{ Auth::user()->name }}</span>
-          </a>
-          <a class="text-center block border border-blue-500 rounded py-2 px-4 bg-blue-500 hover:bg-blue-700 text-white ml-2" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
-                                    </a>
+            <div
+            class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto"
+            >
+                <a
+                    href="/mylist"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                >
+                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">マイリスト</span>
+                </a>
+                <a
+                    href="#"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white sm:my-2"
+                >
+                    <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ Auth::user()->name }}</span>
+                </a>
+                <a class="sm:my-2 hover:text-white lg:text-center block w-full lg:border lg:border-blue-500 rounded py-2 px-3 lg:px-4 lg:bg-blue-500 lg:hover:bg-blue-700 lg:text-white lg:ml-2 text-gray-400 hover:bg-gray-400" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ __('ログアウト') }}</span>
+                                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-        </div>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+            </div>
       </div>
       @endguest
     </nav>
