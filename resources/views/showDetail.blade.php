@@ -21,6 +21,12 @@ $event = $events->where('id', $event_id)->first()
                 <p class="px-10 text-gray-600 text-lg">{{ $event->detail }}</p>
             </div>
         </div>
+        @auth
+            <form method="POST" action="{{ route('add', $event->id) }}">
+                    @csrf
+                    <button type="submit" class="btn btn-success bg-indigo-100 w-36 lg:mt-2 xl:mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200 text-gray-600 text-sm lg:hidden xl:hidden">マイリストに追加</button>
+            </form>
+            @endauth
         <form action='/detail/{id}' method='POST'>
             {{ csrf_field() }}
             <!-- <input type="hidden" name="name">{{}}</input> -->

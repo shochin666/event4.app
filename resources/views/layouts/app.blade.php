@@ -1,4 +1,5 @@
 <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
@@ -18,37 +19,24 @@
 
   <body>
     <nav class="flex items-center bg-white p-3 flex-wrap">
-      <!-- <a href="#" class="p-2 mr-4 inline-flex items-center"> -->
       <a class="w-auto px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block" href="{{ url('/') }}">
-      <span class="text-2xl">{{ config('app.name', 'Laravel') }}</span>
-                </a>
-        <!-- <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          class="fill-current text-white h-8 w-8 mr-2"
-        >
-          <path
-            d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"
-          />
-        </svg>
-        <span class="text-xl text-white font-bold uppercase tracking-wide"
-          >Talwind CSS</span
-        > -->
+      <span class="text-2xl">{{ config('app.name', 'Laravel') }}</span></a>
+        
         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
       <button
-        class="text-gray-500 inline-flex p-3 hover:bg-gray-500 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+        class="text-gray-500 inline-flex p-3 rounded lg:hidden ml-auto outline-none nav-toggler"
         data-target="#navigation"
       >
-        <i class="material-icons sm:text-5xl">menu</i>
+      <i class="material-icons">reorder</i>
       </button>
       <div
         class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
@@ -73,12 +61,12 @@
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                                                 <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ __('ログアウト') }}</span>
-                                            </a>
+</a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-            </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
       </div>
       @endguest
     </nav>
@@ -109,7 +97,3 @@
     </script>
   </body>
 </html>
-
-    <!-- </div>
-</body>
-</html> -->
