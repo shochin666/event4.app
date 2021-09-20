@@ -43,4 +43,29 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Event::class, 'mylists');
     }
+
+    public function myjoinEvents()
+    {
+        return $this->belongsToMany(Event::class, 'join_events');
+    }
+
+    public function isJoin($event){
+        foreach($this->myjoinEvents()->get() as $joinEvent){
+
+            if($event->id == $joinEvent->id){
+                return true;
+            }
+        }
+        return false;
+    }
+    public function isMylist($event){
+        foreach($this->mylistEvents()->get() as $joinEvent){
+
+            if($event->id == $joinEvent->id){
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }

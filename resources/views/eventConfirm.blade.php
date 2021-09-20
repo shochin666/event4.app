@@ -22,11 +22,12 @@
                     <span class="flex justify-center mb-4">募集人数：{{ $input['people'] }} 人</span>
                     <span class="flex justify-center mb-4">コメント：{{ $input['detail'] }}</span>
                </div>
-               <div class="flex flex-row mx-40">
+               <div class="flex flex-col lg:flex-row xl:flex-row mx-40">
                     <!-- このボタンをおしたらリダイレクトされるときにvalueを保持したい -->
-                    <input name="back" type="submit" value="戻る" style="cursor:pointer" class="btn mt-12 mx-auto rounded-3xl border bg-white border-gray-400 flex justify-around w-36 py-2 text-gray-600 hover:bg-gray-400 hover:text-white">
-                    <input name="complete" type="submit" value="作成する" style="cursor:pointer" class="btn btn-success <!-- いるのかわからん -->
-                    mt-12 mx-auto rounded-3xl border border-gray-400 flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-blue-500 hover:text-white">
+                    <input name="back" type="submit" value="戻る" style="cursor:pointer" class="btn mt-12 mx-auto rounded-3xl lg:rounded-md xl:rounded-md border lg:border-0 xl:border-0 bg-white border-gray-400 flex justify-around w-36 py-2 text-gray-600 hover:bg-gray-400 hover:text-white">
+                    <input name="complete" type="submit" value="作成する" style="cursor:pointer" class="btn btn-success 
+                    mt-12 mx-auto rounded-3xl border border-gray-400 flex justify-around w-36 py-2 sm:bg-indigo-400 md:bg-indigo-400 lg:bg-white xl:bg-white 
+                    text-white lg:text-gray-600 xl:text-gray-600 hover:bg-blue-500 hover:text-white    lg:rounded-md xl:rounded-md">
                </div> 
           </form>
      </div>

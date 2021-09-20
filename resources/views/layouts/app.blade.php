@@ -19,8 +19,8 @@
 
   <body>
     <nav class="flex items-center bg-white p-3 flex-wrap">
-      <a class="w-auto px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block" href="{{ url('/') }}">
-      <span class="text-2xl">{{ config('app.name', 'Laravel') }}</span></a>
+      <a class="w-auto px-3 py-2 rounded items-center justify-center block" href="{{ url('/') }}">
+      <img class="w-24" src="/images/logo.png" alt="ロゴ"></a>
         
         @guest
                 <li class="nav-item">
@@ -36,7 +36,7 @@
         class="text-gray-500 inline-flex p-3 rounded lg:hidden ml-auto outline-none nav-toggler"
         data-target="#navigation"
       >
-      <i class="material-icons">reorder</i>
+      <i class="hover:hidden material-icons">reorder</i>
       </button>
       <div
         class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
@@ -45,6 +45,12 @@
             <div
             class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto"
             >
+            <a
+                    href="/home"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                >
+                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">タイムライン</span>
+                </a>
                 <a
                     href="/mylist"
                     class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
@@ -71,7 +77,7 @@
       @endguest
     </nav>
 
-    <main class="py-4">
+    <main>
             @yield('content')
     </main>
 

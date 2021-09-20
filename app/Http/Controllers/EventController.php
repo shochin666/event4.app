@@ -127,4 +127,26 @@ class EventController extends Controller
 
         return redirect()->back();
     }
+
+    public function delete(Event $event)
+    {
+        Auth::user()->mylistEvents()->detach($event->id);
+
+        return redirect()->back();
+    }
+
+    public function joinEvent(Event $event)
+    {
+ 
+        Auth::user()->myjoinEvents()->attach($event->id);
+
+        return redirect()->back();
+    }
+
+    public function delete2(Event $event)
+    {
+        Auth::user()->myjoinEvents()->detach($event->id);
+
+        return redirect()->back();
+    }
 }

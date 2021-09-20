@@ -22,6 +22,8 @@ Route::get('/home', 'EventController@index')->name('home');
 Route::get('detail/{id}', 'EventController@showDetail');
 
 Route::post('detail/{id}', 'EventController@join');
+Route::post('join/{event}', 'EventController@joinEvent')->name('joinEvent');
+Route::middleware('auth')->post('join/delete/{event}', 'EventController@delete2')->name('delete2');
 
 Route::get('/set_event', 'EventController@show')->name('setEvent.show');
 Route::post('/set_event', 'EventController@post')->name('setEvent.post');
@@ -37,5 +39,6 @@ Route::get('/set_event/complete', 'EventController@complete')->name('setEvent.co
 // })->where('any', '.*');
 
 Route::middleware('auth')->post('/mylist/{event}', 'EventController@add')->name('add');
+Route::middleware('auth')->post('/mylist/delete/{event}', 'EventController@delete')->name('delete');
 
 Route::middleware('auth')->get('/mylist', 'MylistController@index');

@@ -15,7 +15,7 @@ class CreateJoinEventsTable extends Migration
     {
         Schema::create('join_events', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('event_id');
         });
     }
 
