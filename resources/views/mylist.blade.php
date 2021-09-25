@@ -5,7 +5,7 @@
 <main class="px-auto w-full m-0 p-0 w-140">
     <div class="mb-20 mt-0 grid grid-cols-1 gap-10  w-full px-10 sm:px-10 md:px-10 lg:px-0 xl:px-0">
 
-    <p class="ml-20 text-2xl text-gray-500 ">マイリスト</p>
+    <p class="ml-32 text-2xl text-gray-500 pt-10">マイリスト</p>
 
         @foreach($events as $event)
 

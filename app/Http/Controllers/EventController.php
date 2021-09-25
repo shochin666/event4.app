@@ -12,7 +12,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
+        $events = Event::orderBy('created_at')->paginate(5);
         return view('home', ['events' => $events]);
     }
 

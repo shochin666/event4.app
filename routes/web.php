@@ -42,3 +42,6 @@ Route::middleware('auth')->post('/mylist/{event}', 'EventController@add')->name(
 Route::middleware('auth')->post('/mylist/delete/{event}', 'EventController@delete')->name('delete');
 
 Route::middleware('auth')->get('/mylist', 'MylistController@index');
+
+Route::middleware('auth')->get('/profile', 'UserController@edit');
+Route::middleware('auth')->post('/profile', 'UserController@update')->name('update');

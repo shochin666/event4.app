@@ -2,13 +2,14 @@
 
 @section('content')
 
-<main class="px-auto w-full m-0 p-0 w-140">
-    <div class="mt-0 grid grid-cols-1 gap-10  w-full px-10 sm:px-10 md:px-10 lg:px-0 xl:px-0 mb-20">
-       <a href="set_event" class="btn btn-success mt-12 mx-auto rounded-md flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white md:mr-36 lg:mr-52 xl:mr-80 sm:hidden md:hidden lg:block  xl:block text-center">
+<main class="px-auto w-full m-0 p-0 w-140 mb-40">
+    <p class="ml-32 text-2xl text-gray-500 pt-10">タイムライン</p>
+    <div class="mt-0 grid grid-cols-1 gap-10  w-full px-10 sm:px-10 md:px-10 lg:px-0 xl:px-0 mb-8">
+       <a href="set_event" class="border btn btn-success mx-auto rounded-md flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white md:mr-36 lg:mr-52 xl:mr-80 sm:hidden md:hidden lg:block  xl:block text-center">
            <span>イベント作成</span>
         </a>
 
-        <div class="ml-auto w-16 h-16 mr-32 pt-500 border-3xl border-4 rounded-full lg:hidden xl:hidden fixed bottom-16 right-0 z-10 bg-white shadow-md">
+        <div class="ml-auto w-16 h-16 mr-32 mb-16 pt-500 border-3xl border-4 rounded-full lg:hidden xl:hidden fixed bottom-0 right-0 z-10 bg-white shadow-md">
             <a href="set_event" class="w-sm btn btn-success lg:hidden xl:hidden">
                 <span class="material-icons ml-4 mt-4 text-blue-400">create</span>
             </a>
@@ -96,6 +97,9 @@
         
        
         @endforeach
+    </div>
+    <div class="w-screen">
+        {{ $events->links('vendor.pagination.default') }}
     </div>
 </main>
 @endsection

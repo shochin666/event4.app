@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-blue-50 h-screen">
-     <div class="h-20 bg-blue-50">
-          <!-- space -->
-     </div>
-     <div class="border rounded-md bg-white py-20 mx-20">
+<div>
+     <div class="bg-white py-20 mx-20">
           <span class="text-2xl text-gray-500 ml-20">イベント作成</span>
 
           <div class="h-16">
@@ -43,7 +40,7 @@
                               </label>
                               <label class="event_name flex lg:justify-between xl:justify-between justify-center">
                               <span class="text-gray-600 mr-2 my-auto text-lg whitespace-nowrap">開催場所</span>
-                              <input class="border shadow-md rounded-md h-10 pl-2 w-72 lg:w-52 xl:w-52 text-lg" placeholder="例)池袋パルコF2" name="place" type="text" value="{{ old('place') }}">
+                              <input class="border shadow-md rounded-md h-10 pl-2 w-72 lg:w-52 xl:w-52 text-lg" name="place" type="text" value="{{ old('place') }}">
                          </label>
                               <label class="people flex lg:justify-between xl:justify-between justify-center">
                                    <span class="mr-2 text-gray-600 my-auto text-lg whitespace-nowrap">募集人数</span>
@@ -57,7 +54,7 @@
                          <!-- コメント欄を高さfullにしたい -->
                          <label class="event_name flex flex-col">
                               <span class="text-gray-600 whitespace-nowrap">コメント(詳細など)</span>
-                              <textarea name="detail" rows="8" cols="60" class="w-full border shadow-md rounded-md sm:w-80 md:w-80 lg:w-96 xl:w-96 h-44 mt-2 p-2 text-lg" placeholder="例)服装は自由です。当日は交通機関をご利用ください。">{{ old('detail') }}</textarea>
+                              <textarea name="detail" rows="8" cols="60" class="w-full border shadow-md rounded-md sm:w-80 md:w-80 lg:w-96 xl:w-96 h-44 mt-2 p-2 text-lg" placeholder="例) 服装は自由です。当日は交通機関をご利用ください。">{{ old('detail') }}</textarea>
                          </label>
                     </div>
                </div>

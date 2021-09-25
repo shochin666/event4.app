@@ -19,17 +19,44 @@
 
   <body>
     <nav class="flex items-center bg-white p-3 flex-wrap">
-      <a class="w-auto px-3 py-2 rounded items-center justify-center block" href="{{ url('/') }}">
-      <img class="w-24" src="/images/logo.png" alt="ロゴ"></a>
+      <a class="ml-4 w-auto px-3 py-2 rounded items-center justify-center block" href="/home">
+      <img class="w-28" src="/images/logo.png" alt="ロゴ"></a>
         
-        @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
+      @guest
+      <button
+        class="text-gray-500 inline-flex p-3 rounded lg:hidden xl:hidden ml-auto outline-none nav-toggler "
+        data-target="#navigation"
+      >
+        <i class="hover:hidden material-icons">reorder</i>
+      </button>
+      <div
+        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        id="navigation"
+      >
+            <div
+            class="lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto lg:hidden xl:hidden "
+            >
+              <a href="{{ route('login') }}"
+                      class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                  >
+                      <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">ログイン</span>
+              </a>
                 @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+              <a href="{{ route('register') }}"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                >
+                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">登録</span>
+                </a>
+              </div>
+            </div>
+            @endif
+        
+          <div class="flex ml-auto mr-10 sm:hidden md:hodden lg:block xl:block">
+            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+          @if (Route::has('register'))
+            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('register') }}">{{ __('登録') }}</a>
+          </div>
+                    
                             @endif
                         @else
       <button
@@ -58,12 +85,12 @@
                     <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">マイリスト</span>
                 </a>
                 <a
-                    href="#"
+                    href="/profile"
                     class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white sm:my-2"
                 >
                     <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ Auth::user()->name }}</span>
                 </a>
-                <a class="sm:my-2 hover:text-white lg:text-center block w-full lg:border lg:border-blue-500 rounded py-2 px-3 lg:px-4 lg:bg-blue-500 lg:hover:bg-blue-700 lg:text-white lg:ml-2 text-gray-400 hover:bg-gray-400" href="{{ route('logout') }}"
+                <a class="lg:ml-20 xl:ml-20 lg:mr-4 xl:mr-4 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                                                 <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ __('ログアウト') }}</span>
