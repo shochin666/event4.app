@@ -86,6 +86,9 @@
        
         @endforeach
     </div>
+    <div class="w-screen">
+        {{ $events->links('vendor.pagination.default') }}
+    </div>
 </main>
 @endsection
 

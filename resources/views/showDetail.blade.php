@@ -17,7 +17,7 @@ $event = $events->where('id', $event_id)->first()
                 @else
                 <form class="sm:hidden md:hidden lg:hidden xl:block 2xl:block ml-40 xl:mr-12 2xl:mr-32" method="POST" action="{{ route('add', $event->id) }}">
                     @csrf
-                    <button type="submit" class="mt-8 mx-auto flex justify-around w-36 py-2 text-gray-600 btn btn-success lg:mr-10 x:mr-4 hover:bg-gray-100">マイリストに追加</button>
+                    <button type="submit" class="mt-8 mx-auto flex justify-around w-36 py-2 text-gray-600 btn btn-success lg:mr-10 xl:mr-4 hover:bg-gray-100">マイリストに追加</button>
                 </form>
                 @endif
             </div>
@@ -36,12 +36,12 @@ $event = $events->where('id', $event_id)->first()
              @if(Auth::user()->isMylist($event))
              <form method="POST" action="{{ route('delete', $event->id) }}" class="text-center">              
             @csrf           
-                <button href="#" class="h-11 rounded-3xl xl:rounded-none sm:shadow-md md:shadow-md lg:shadow-none xl:shadow-none border xl:border-none lg:hidden xl:hidden 2xl:hidden w-36 lg:mt-2 xl:mt-2 lg:mb-4 xl:mb-4 p-2 bg-red-400 text-sm"><span class="text-white text-sm flex justify-center">マイリストから削除</span></button>
+                <button href="#" class="h-11 lg:hidden xl:hidden 2xl:hidden w-36 lg:mt-2 xl:mt-2 lg:mb-4 xl:mb-4 p-2"><span class="text-gray-600 flex justify-center whitespace-nowrap">マイリストから削除</span></button>
             </form>
             @else
             <form class=" xl:hidden" method="POST" action="{{ route('add', $event->id) }}">
                         @csrf
-                        <button type="submit" class="mt-8 mx-auto flex justify-around w-36 py-2 text-gray-600 btn btn-success">マイリストに追加</button>
+                        <button type="submit" class="mx-auto flex justify-around w-36 py-2 text-gray-600 btn btn-success">マイリストに追加</button>
             </form>
             @endif
             

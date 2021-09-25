@@ -26,7 +26,7 @@
                <!-- <label for="password">パスワード</label>
                   <input id="password" name="password" type="password" value="{{ $user->password }}"> -->
                   <!-- 削除ボタンの実装 -->
-               <button type="submit" class="btn mt-12 lg:mt-12 xl:mt-12 mx-auto rounded-3xl lg:rounded-md xl:rounded-md border border-gray-400 flex justify-around w-36 py-2 bg-blue-500 xl:bg-white lg:bg-white text-white lg:text-gray-600 xl:text-gray-600 lg:hover:bg-red-400 xl:hover:bg-red-400 lg:hover:text-white xl:hover:text-white ">変更</button>
+               <button type="submit" class="btn mt-12 lg:mt-12 xl:mt-12 mx-auto rounded-3xl lg:rounded-md xl:rounded-md border border-gray-400 flex justify-around w-36 py-2 bg-blue-500 xl:bg-white lg:bg-white text-white lg:text-gray-600 xl:text-gray-600 lg:hover:bg-gray-400 xl:hover:bg-gray-400 lg:hover:text-white xl:hover:text-white ">変更</button>
             </form>
          </div>
       </div>
