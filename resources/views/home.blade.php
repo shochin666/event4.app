@@ -17,7 +17,7 @@
 
         @foreach($events as $event)
 
-        <a href="detail/{{ $event->id }}" class="w-full sm:block md:block lg:hidden xl:hidden z-0">
+        <a href="detail/{{ $event->id }}" class="sm:block md:block lg:hidden xl:hidden z-0">
             <div class="mx-auto min-w-min sm:w-4/6 lg:h-64 xl:h-64 border-4 lg:border xl:border border-blue-200 rounded-lg bg-white w-full sm:block md:block lg:hidden xl:hidden max-w-screen-sm">
 
                 <div class="flex flex-row w-full">
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="flex lg:justify-center xl:justify-center lg:ml-20 xl:ml-20">
-                            <div class="ml-16 lg:ml-32 xl:32 lg:pl-8 xl:pl-8 mt-2 mr-10 flex flex-col text-center text-none">
+                            <div class="w-48 ml-16 lg:ml-32 xl:32 lg:pl-8 xl:pl-8 mt-2 mr-10 flex flex-col text-center text-none">
                                 <div class=" sm:hidden md:hidden lg:block  xl:block text-left ml-14">
                                     <span class="text-gray-500 ">募集人数  <span class="text-pink-500">{{ $event->people }}</span>人</span>
                                 </div>
