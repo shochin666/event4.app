@@ -23,12 +23,12 @@ $event = $events->where('id', $event_id)->first()
             </div>
         </div>
         <div class="rounded-xl bg-indigo-50 max-w-3xl min-w-2xl h-24 container mx-auto mt-5 flex flex-col justify-around text-lg">
-            <p class="text-gray-600 px-10">このイベントは <span class="text-pink-500">{{ $event->date }}</span> に <span class="text-pink-500">{{ $event->place}}</span> にて開催予定です。</p>
+            <p class="text-gray-600 px-10 break-all">このイベントは <span class="text-pink-500">{{ $event->date }}</span> に <span class="text-pink-500">{{ $event->place}}</span> にて開催予定です。</p>
         </div>
         <div class="detail mt-12">
             <p class="text-2xl text-gray-500 2xl:ml-32">ホストから</p><!-- ホスト名を入れたい -->
-            <div class="rounded-xl bg-pink-50 max-w-3xl min-w-2xl h-24 container mx-auto mt-3 flex flex-col justify-around">
-                <p class="px-10 text-gray-600 text-lg">{{ $event->detail }}</p>
+            <div class="rounded-xl bg-pink-50 max-w-3xl min-w-2xl h-24 container mx-auto mt-3 flex flex-col justify-around px-10">
+                <p class="text-gray-600 text-lg break-all">{{ $event->detail }}</p>
             </div>
         </div>
         @auth

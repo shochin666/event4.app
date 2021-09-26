@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <div class="mt-20 lg:fixed xl:fixed lg:left-72 xl:left-72 bottom-0 w-screen">
+    <div class="fixed mt-20 lg:fixed xl:fixed lg:left-72 xl:left-72 bottom-0 w-screen">
         <div class="flex mb-16 bg-white shadow-md w-min mx-auto">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())

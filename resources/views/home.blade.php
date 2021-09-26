@@ -35,7 +35,7 @@
                                 <div class="sm:hidden md:hidden lg:block  xl:block">
                                     <span class="text-gray-500 mb-2">募集人数  <span class="text-pink-500">{{ $event->people }}</span>人</span>
                                 </div>
-                                <span class="text-4xl font-hairline pl-6 whitespace-nowrap">{{ $event->name }}</span>
+                                <span class="text-4xl font-hairline pl-6 whitespace-nowrap">{{Str::limit($event->name, 12)}}</span>
                             </div>
                         </div>
                         
@@ -66,16 +66,16 @@
                         <div class="flex flex-col mt-3 lg:mt-4 xl:mt-4 whitespace-nowrap">
                             <div class="pl-6 text-gray-500 text-lg">開催日 {{ $event->date }}</div>
                             <div class="mt-1 ml-8 text-gray-500 text-md flex flex-col sm:hidden md:hidden lg:block  xl:block">
-                                <span>{{ $event->place }}</span>
+                                <span>{{Str::limit($event->place, 15)}}</span>
                             </div> 
                         </div>
 
                         <div class="flex lg:justify-center xl:justify-center lg:ml-20 xl:ml-20">
-                            <div class="w-48 ml-16 lg:ml-32 xl:32 lg:pl-8 xl:pl-8 mt-2 mr-10 flex flex-col text-center text-none">
-                                <div class=" sm:hidden md:hidden lg:block  xl:block text-left ml-14">
+                            <div class="w-40 ml-16 lg:ml-32 xl:32 lg:pl-8 xl:pl-8 mt-2 mr-10 flex flex-col text-center text-none">
+                                <div class=" sm:hidden md:hidden lg:block  xl:block text-left ml-0 whitespace-nowrap">
                                     <span class="text-gray-500 ">募集人数  <span class="text-pink-500">{{ $event->people }}</span>人</span>
                                 </div>
-                                <span class="text-4xl font-hairline lg:pl-24 xl:pl-28 pt-1 whitespace-nowrap">{{ $event->name }}</span>
+                                <span class="text-4xl font-hairline lg:pl-8 xl:pl-12 pt-1 whitespace-nowrap">{{Str::limit($event->name, 15)}}</span>
                             </div>
                         </div>
                         

@@ -35,6 +35,12 @@
                     
                         <!-- 画面が大きな時の設定 -->
                     <div class="left-info ml-auto mr-10 lg:mt-4 xl:mt-4 flex flex-col sm:hidden md:hidden lg:block xl:block">
+                        @auth
+                            <form method="POST" action="{{ route('add', $event->id) }}">
+                            @csrf
+                                <button type="submit" class="btn btn-success bg-indigo-100 w-36 lg:mt-2 xl:mt-2 p-2 rounded-xl shadow-md hover:bg-indigo-200 text-gray-600 text-sm  xs:hidden sm:hidden md:hidden lg:block  xl:block">マイリストに追加</button>
+                            </form>
+                        @endauth
                         
 
                         <!-- ボタン出し入れできるようにする -->
@@ -73,7 +79,7 @@
                         @auth
                             <form method="POST" action="{{ route('delete', $event->id) }}">              
                                 @csrf           
-                              <button href="#" class="bg-white w-36 lg:mt-2 xl:mt-2 lg:mb-1 xl:mb-1 p-2 hover:bg-red-200 text-gray-600 text-sm"><span class="text-gray-600 text-sm flex justify-center">削除</span></button>
+                              <button href="#" class="bg-white w-36 lg:mt-2 xl:mt-2 lg:mb-0 xl:mb-0 p-2 hover:bg-red-200 text-gray-600 text-sm"><span class="text-gray-600 text-sm flex justify-center">削除</span></button>
                             </form>
                         @endauth
 
