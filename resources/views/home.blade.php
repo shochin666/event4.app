@@ -5,7 +5,7 @@
 <main class="px-auto w-full m-0 p-0 w-140 mb-40">
     <p class="ml-32 text-2xl text-gray-500 pt-10">タイムライン</p>
     <div class="mt-0 grid grid-cols-1 gap-10  w-full px-10 sm:px-10 md:px-10 lg:px-0 xl:px-0 mb-8">
-       <a href="set_event" class="border btn btn-success mx-auto rounded-md flex justify-around w-36 py-2 bg-white text-gray-600 hover:bg-gray-400 hover:text-white md:mr-36 lg:mr-40 xl:mr-60 sm:hidden md:hidden lg:block xl:block text-center">
+       <a href="set_event" class="btn btn-success mx-auto flex justify-around w-36 py-2  text-gray-600 hover:text-purple-600 md:mr-36 lg:mr-40 xl:mr-60 sm:hidden md:hidden lg:block xl:block text-center">
            <span>イベント作成</span>
         </a>
 
@@ -14,6 +14,21 @@
                 <span class="material-icons ml-4 mt-4 text-blue-400">create</span>
             </a>
         </div>
+
+        <?php $event_num = count($events);
+        ?>
+
+        @if($event_num == 0)
+        <!-- 投稿がない時に表示させる内容 -->
+        <div class="flex justify-center mt-16">
+            <div class="flex flex-col">
+                <p class="text-gray-500 text-2xl flex justify-center">まだ投稿がありません</p>
+                <p class="justify-center mt-4 text-gray-500 sm:hidden md:hidden lg:block xl:block">右上の作成ボタンから新しくイベントを作成しよう</p>
+                <p class="justify-center mt-4 text-gray-500 sm:block md:block lg:hidden xl:hidden">右下の作成ボタンから新しくイベントを作成しよう</p>
+            </div>
+        </div>
+        @else
+        @endif
 
         @foreach($events as $event)
 

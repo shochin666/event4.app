@@ -7,6 +7,20 @@
 
     <p class="ml-32 text-2xl text-gray-500 pt-10">マイリスト</p>
 
+    <?php $event_num = count($events);
+        ?>
+
+    @if($event_num == 0)
+        <!-- 投稿がない時に表示させる内容 -->
+        <div class="flex justify-center mt-24">
+            <div class="flex flex-col">
+                <p class="text-gray-500 text-2xl flex justify-center">マイリストが空です</p>
+                <p class="justify-center mt-4 text-gray-500">タイムラインから投稿をマイリストに追加しよう</p>
+            </div>
+        </div>
+        @else
+        @endif
+
         @foreach($events as $event)
 
         <a href="detail/{{ $event->id }}" class="w-full sm:block md:block lg:hidden xl:hidden z-0">

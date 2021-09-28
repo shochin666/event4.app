@@ -19,8 +19,10 @@
 
   <body class="font-body">
     <nav class="flex items-center bg-white p-3 flex-wrap">
+      @auth
       <a class="ml-4 w-auto px-3 py-2 rounded items-center justify-center block" href="/home">
       <img class="w-28" src="/images/logo.png" alt="ロゴ"></a>
+      @endauth
         
       @guest
       <button
