@@ -41,7 +41,7 @@
                                 <div class="sm:hidden md:hidden lg:block  xl:block">
                                     <span class="text-gray-500 mb-2">募集人数  <span class="text-pink-500">{{ $event->people }}</span>人</span>
                                 </div>
-                                <span class="text-4xl font-hairline pl-2 whitespace-nowrap">{{ $event->name }}</span>
+                                <span class="text-4xl font-hairline pl-2 whitespace-nowrap">{{Str::limit($event->name, 12)}}</span>
                             </div>
                         </div>
                         
@@ -74,7 +74,7 @@
                         <div class="flex flex-col mt-3 lg:mt-4 xl:mt-4 whitespace-nowrap">
                             <div class="pl-6 text-gray-500 text-lg">開催日 {{ $event->date }}</div>
                             <div class="mt-1 ml-8 text-gray-500 text-md flex flex-col sm:hidden md:hidden lg:block  xl:block">
-                                <span>{{ $event->place }}</span>
+                                <span>{{Str::limit($event->place, 15)}}</span>
                             </div> 
                         </div>
 
@@ -83,7 +83,7 @@
                                 <div class="sm:hidden md:hidden lg:block  xl:block text-left">
                                     <span class="text-gray-500 mb-2">募集人数  <span class="text-pink-500">{{ $event->people }}</span>人</span>
                                 </div>
-                                <span class="text-4xl font-hairline pl-10 whitespace-nowrap">{{ $event->name }}</span>
+                                <span class="text-4xl font-hairline pl-10 whitespace-nowrap">{{Str::limit($event->name, 12)}}</span>
                             </div>
                         </div>
                         

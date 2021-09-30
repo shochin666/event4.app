@@ -12,16 +12,16 @@
       integrity="sha256-CAI/7ThhltsmP2L2zKBYa7FknB3ZwFbD0nqL8FCdxdc="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+ 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
   </head>
 
-  <body class="font-body">
-    <nav class="flex items-center bg-white p-3 flex-wrap">
+  <body class="font-body w-screen">
+    <nav class="flex items-center justify-center bg-white p-3 pb-10 flex-wrap">
       @auth
-      <a class="ml-4 w-auto px-3 py-2 rounded items-center justify-center block" href="/home">
-      <img class="w-28" src="/images/logo.png" alt="ロゴ"></a>
+      <a class="sm:ml-4 md:ml-4 flex w-auto rounded items-center justify-center" href="/home">
+      <img class="w-28 lg:w-44 xl:w-44 mt-6 mb-8" src="/images/logo.png" alt="ロゴ"></a>
       @endauth
         
       @guest
@@ -68,35 +68,58 @@
       <i class="hover:hidden material-icons">reorder</i>
       </button>
       <div
-        class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+        class="hidden top-navbar w-full lg:flex xl:flex"
         id="navigation"
       >
+      
+            <!-- 本当はここにjustify-betweenを入れたい -->
             <div
-            class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto"
+            class="flex flex-col lg:flex-row xl:flex-row w-full justify-between"
             >
-            <a
-                    href="/home"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
-                >
-                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">タイムライン</span>
-                </a>
+              <div class="lg:flex-row lg:ml-8 xl:ml-8">
                 <a
-                    href="/mylist"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
-                >
-                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">マイリスト</span>
-                </a>
-                <a
-                    href="/profile"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white sm:my-2"
-                >
-                    <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ Auth::user()->name }}</span>
-                </a>
-                <a class="lg:ml-20 xl:ml-20 lg:mr-4 xl:mr-4 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ __('ログアウト') }}</span>
-</a>
+                        href="/home"
+                        class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                    >
+                        <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">タイムライン</span>
+                    </a>
+                    <a
+                        href="/mylist"
+                        class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                    >
+                        <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">マイリスト</span>
+                    </a>
+                    <a
+                        href="/myevent"
+                        class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                    >
+                        <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">参加中
+                        </span>
+                    </a>
+                    <a
+                        href="/created_event"
+                        class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
+                    >
+                        <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">作成したイベント
+                        </span>
+                    </a>
+              </div>
+              
+                  <div class="flex flex-col lg:flex-row lg:mr-6 xl:mr-6">
+                    <a
+                        href="/profile"
+                        class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white sm:my-2"
+                    >
+                        <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ Auth::user()->name }}</span>
+                    </a>
+                    <a class="lg:mr-4 xl:mr-4 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                    <span class="text-2xl lg:text-sm pl-10 lg:pl-0">{{ __('ログアウト') }}</span>
+                      </a>
+
+                  </div>
+                
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

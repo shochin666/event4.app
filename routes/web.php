@@ -45,3 +45,11 @@ Route::middleware('auth')->get('/mylist', 'MylistController@index');
 
 Route::middleware('auth')->get('/profile', 'UserController@edit');
 Route::middleware('auth')->post('/profile', 'UserController@update')->name('update');
+
+Route::get('/myevent', 'MyEventController@index')->name('myevent');
+
+Route::middleware('auth')->post('/myevent/delete/{event}', 'EventController@delete')->name('eventDelete');
+
+Route::get('/created_event', 'MyEventController@created')->name('created');
+
+Route::middleware('auth')->post('/created_event/delete/{event}', 'EventController@createdDelete')->name('createdDelete');

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator; 
 
 
+
 class EventController extends Controller
 {
     public function index()
@@ -90,6 +91,7 @@ class EventController extends Controller
             $event->name = $input['name'];
             $event->place = $input['place'];
             $event->detail = $input['detail'];
+            $event->user_id = Auth::id();
             $event->save();
 
             return redirect()->action('EventController@complete');
@@ -135,6 +137,13 @@ class EventController extends Controller
         return redirect()->back();
     }
 
+    public function eventdelete(Event $event)
+    {
+        Auth::user()->myjoinEvents()->detach($event->id);
+
+        return redirect()->back();
+    }
+
     public function joinEvent(Event $event)
     {
  
@@ -146,6 +155,14 @@ class EventController extends Controller
     public function delete2(Event $event)
     {
         Auth::user()->myjoinEvents()->detach($event->id);
+
+        return redirect()->back();
+    }
+
+    public function createdDelete(Event $event)
+    {
+
+        $event->delete();
 
         return redirect()->back();
     }

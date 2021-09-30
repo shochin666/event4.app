@@ -5,23 +5,29 @@
 <main class="px-auto w-full m-0 p-0 w-140">
     <div class="mb-20 mt-0 grid grid-cols-1 gap-10  w-full px-10 sm:px-10 md:px-10 lg:px-0 xl:px-0">
 
-    <p class="ml-32 text-2xl text-gray-500 pt-10">参加中のイベント</p>
+    <p class="ml-32 text-2xl text-gray-500 pt-10">作成したイベント</p>
 
-    <?php $event_num = count($myevents);
-        ?>
+    <?php
+    $flag = 0;
+    foreach($events as $event){
+        if($event->isOwner())
+        $flag =+ 1;
+    }
+    ?>
 
-    @if($event_num == 0)
-        <!-- 投稿がない時に表示させる内容 -->
-        <div class="flex justify-center mt-24">
-            <div class="flex flex-col">
-                <p class="text-gray-500 text-2xl flex justify-center">イベントに参加していません</p>
-                <p class="flex justify-center mt-4 text-gray-500">タイムラインからイベントに参加しよう</p>
+        @if($flag == 0)
+            <!-- 投稿がない時に表示させる内容 -->
+            <div class="flex justify-center mt-24">
+                <div class="flex flex-col">
+                    <p class="text-gray-500 text-2xl flex justify-center">作成されたイベントがありません</p>
+                    <p class="flex justify-center mt-4 text-gray-500">タイムラインからイベントを作成しよう</p>
+                </div>
             </div>
-        </div>
         @else
         @endif
 
-        @foreach($myevents as $event)
+        @foreach($events as $event)
+         @if($event->isOwner())
 
         <a href="detail/{{ $event->id }}" class="w-full sm:block md:block lg:hidden xl:hidden z-0">
             <div class="mx-auto min-w-min max-w-screen-md sm:w-4/6 lg:h-64 xl:h-64 border-4 lg:border xl:border border-blue-200 rounded-lg bg-white w-full sm:block md:block lg:hidden xl:hidden">
@@ -91,11 +97,12 @@
                     
                     <div class="left-info ml-auto mr-10 lg:mt-4 xl:mt-4 flex flex-col">
                         @auth
-                        <form method="POST" action="{{ route('delete2', $event->id) }}">     
+                            <form method="POST" action="{{ route('createdDelete', $event->id) }}">              
                                 @csrf           
-                              <button href="#" class="bg-white w-36 lg:mt-2 xl:mt-2 lg:mb-0 xl:mb-0 p-2 hover:bg-red-200 text-gray-600 text-sm"><span class="text-gray-600 text-sm flex justify-center">キャンセル</span></button>
+                              <button href="#" class="bg-white w-36 lg:mt-2 xl:mt-2 lg:mb-0 xl:mb-0 p-2 hover:bg-red-200 text-gray-600 text-sm"><span class="text-gray-600 text-sm flex justify-center">削除</span></button>
                             </form>
                         @endauth
+
 
                         <!-- ボタン出し入れできるようにする -->
                         <a href="detail/{{ $event->id }}" class="bg-white w-36 mt-1 lg:mt-0 xl:mt-0 p-2 hover:bg-gray-200 sm:hidden md:hidden lg:block xl:block"><span class="text-gray-600 text-sm flex justify-center">詳しく見る</span></a> 
@@ -103,8 +110,11 @@
                 </div>
             </div>
         
-       
+            @endif
         @endforeach
+    </div>
+    <div class="w-screen">
+        {{ $events->links('vendor.pagination.default') }}
     </div>
 </main>
 @endsection
