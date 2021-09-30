@@ -18,10 +18,10 @@
   </head>
 
   <body class="font-body w-screen">
-    <nav class="flex items-center justify-center bg-white p-3 pb-10 flex-wrap">
+    <nav class="flex items-center justify-center bg-white pt-3  flex-wrap">
       @auth
       <a class="sm:ml-4 md:ml-4 flex w-auto rounded items-center justify-center" href="/home">
-      <img class="w-28 lg:w-44 xl:w-44 mt-6 mb-8" src="/images/logo.png" alt="ロゴ"></a>
+      <img class="w-28 lg:w-44 xl:w-44 mt-6 6" src="/images/logo.png" alt="ロゴ"></a>
       @endauth
         
       @guest
@@ -62,7 +62,7 @@
                             @endif
                         @else
       <button
-        class="text-gray-500 inline-flex p-3 rounded lg:hidden ml-auto outline-none nav-toggler"
+        class="text-gray-500 inline-flex p-3 rounded lg:hidden ml-auto outline-none nav-toggler mr-3"
         data-target="#navigation"
       >
       <i class="hover:hidden material-icons">reorder</i>
@@ -128,6 +128,8 @@
       </div>
       @endguest
     </nav>
+
+    <hr>
 
     <main>
             @yield('content')
