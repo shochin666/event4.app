@@ -8,7 +8,7 @@ $event = $events->where('id', $event_id)->first()
 
 <main class="container mx-auto px-20 lg:px-40 xl:px-60">
     <div class="flex flex-col">
-        <div class="flex flex-col mt-4">
+        <div class="flex flex-col mt-8">
             <span class="text-2xl text-gray-500 mb-4">{{ $event->date }} 開催</span>
             <div class="flex flex-row w-full justify-between">
                 <span class="text-5xl font-thin text-gray-700 mt-2 pt-4 whitespace-nowrap 2xl:ml-32">{{ $event->name }}</span>

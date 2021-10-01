@@ -21,7 +21,7 @@
     <nav class="flex items-center justify-center bg-white pt-3  flex-wrap">
       @auth
       <a class="sm:ml-4 md:ml-4 flex w-auto rounded items-center justify-center" href="/home">
-      <img class="w-28 lg:w-44 xl:w-44 mt-6 6" src="/images/logo.png" alt="ロゴ"></a>
+      <img class="w-28 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 mt-2 sm:mb-4" src="/images/logo.png" alt="ロゴ"></a>
       @endauth
         
       @guest

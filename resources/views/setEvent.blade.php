@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
-     <div class="bg-white py-20 mx-20">
+<div class="">
+     <div class=" py-20 mx-20">
           <span class="text-2xl text-gray-500 ml-20">イベント作成</span>
 
           <div class="h-16">
