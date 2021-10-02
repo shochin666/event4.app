@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Event;
+use Illuminate\Auth\Notifications\ResetPassword;
 
 
 class User extends Authenticatable
@@ -35,6 +36,18 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    /**
+     * Override to send for password reset notification.
+     *
+     * @param [type] $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordResetNotification($token));
+    }
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
