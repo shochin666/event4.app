@@ -11,7 +11,7 @@ class MyEventController extends Controller
 {
     public function index(){
         $id = Auth::user()->id;
-        $myevents = Auth::user()->myjoinEvents()->where('Join_events.user_id', $id)->get();
+        $myevents = Auth::user()->myjoinEvents()->where('join_events.user_id', $id)->get();
 
         return view('myevent', ['myevents' => $myevents]);
     }
