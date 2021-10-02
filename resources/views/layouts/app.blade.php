@@ -18,10 +18,10 @@
   </head>
 
   <body class="font-body w-screen">
-    <nav class="flex items-center justify-center bg-white pt-3  flex-wrap">
+    <nav class="flex items-center justify-center bg-white  flex-wrap">
       @auth
-      <a class="sm:ml-4 md:ml-4 flex w-auto rounded items-center justify-center" href="/home">
-      <img class="w-28 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 mt-2 sm:mb-4" src="/images/logo.png" alt="ロゴ"></a>
+      <a class="sm:ml-4 md:ml-4 lg:ml-0 xl:ml-0 flex w-auto rounded items-center justify-center" href="/home">
+      <img class="w-28 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 lg:pt-5 xl:pt-5 mt-6 sm:mb-4 md:mb-4 lg:mb-0 xl:mb-0" src="/images/logo.png" alt="ロゴ"></a>
       @endauth
         
       @guest
