@@ -32,7 +32,7 @@ class EventController extends Controller
         'people' => 'required|min:1',
         'name' => 'required',
         'place' => 'required',
-        'detail' => 'required|min:5|max:255',
+        'detail' => 'required|max:255',
     ];
 
     public function show()
