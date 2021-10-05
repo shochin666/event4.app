@@ -23,6 +23,8 @@ Route::get('detail/{id}', 'EventController@showDetail');
 
 Route::post('detail/{id}', 'EventController@join');
 
+Route::get('detail/delete/{id}', 'EventController@showDetailDelete');
+
 // Route::middleware('auth')->get('/home', 'EventController@index')->name('home');
 
 // Route::get('detail/{id}', 'EventController@showDetail');
@@ -72,6 +74,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/myevent/delete/{event}', 'EventController@delete')->name('eventDelete');
     Route::post('/created_event/delete/{event}', 'EventController@createdDelete')->name('createdDelete');
     Route::get('/created_event', 'MyEventController@created')->name('created');
+
+    Route::post('/detail/delete/{event}', 'EventController@createdDelete2')->name('createdDelete2');
 
     Route::post('join/{event}', 'EventController@joinEvent')->name('joinEvent');
     Route::post('join/delete/{event}', 'EventController@delete2')->name('delete2');

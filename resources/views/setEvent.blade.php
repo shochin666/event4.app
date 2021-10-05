@@ -29,7 +29,7 @@
                     <div class="flex flex-col lg:mr-10 xl:mr-10">
                               <label class="event_name mb-5 flex lg:justify-between xl:justify-between justify-center">
                                    <span class="mr-2 text-gray-600 my-auto text-lg whitespace-nowrap">イベント名</span>
-                                   <input maxlength="20" required class="border rounded-md h-10 pl-2 shadow-md w-72 lg:w-60 xl:w-60 text-lg" name="name" type="text" value="{{ old('name') }}">
+                                   <input maxlength="14" required class="border rounded-md h-10 pl-2 shadow-md w-72 lg:w-60 xl:w-60 text-lg" name="name" type="text" value="{{ old('name') }}">
                               </label>
                               <label class="flex flex-row mb-5 lg:justify-between xl:justify-between justify-center">
                                    <span class="block container my-auto mr-2 w-auto text-gray-600 text-lg whitespace-nowrap">開催日</span>

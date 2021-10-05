@@ -19,7 +19,6 @@
         ?>
 
         @if($event_num == 0)
-        <!-- 投稿がない時に表示させる内容 -->
         <div class="flex justify-center mt-16">
             <div class="flex flex-col">
                 <p class="text-gray-500 text-2xl flex justify-center">まだ投稿がありません</p>
@@ -117,7 +116,6 @@
                         @endauth
                         
 
-                        <!-- ボタン出し入れできるようにする -->
                         <a href="detail/{{ $event->id }}" class="sm:hidden md:hidden lg:block xl:block 2xl:block ml-40 xl:mr-8 2xl:mr-8 btn btn-success bg-white w-36 lg:mt-2 xl:mt-2 p-2 hover:bg-gray-200 text-gray-600 hover:text-white text-sm  xs:hidden"><span class="text-gray-600 text-sm flex justify-center">詳しく見る</span></a> 
                     </div>
                 </div>

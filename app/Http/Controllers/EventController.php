@@ -24,13 +24,20 @@ class EventController extends Controller
         return view('showDetail', compact('events', 'event_id'));
     }
 
+    public function showDetailDelete($id)
+    {
+        $events = Event::all();
+        $event_id = $id;
+        return view('detailDelete', compact('events', 'event_id'));
+    }
+
     
     protected $formItems = ['date', 'people', 'name', 'place', 'detail'];
 
     protected $validator = [
         'date' => 'required',
         'people' => 'required|min:1',
-        'name' => 'required',
+        'name' => 'required|max:14',
         'place' => 'required',
         'detail' => 'required|max:255',
     ];
@@ -165,5 +172,13 @@ class EventController extends Controller
         $event->delete();
 
         return redirect()->back();
+    }
+
+    public function createdDelete2(Event $event)
+    {
+
+        $event->delete();
+
+        return view('eventComplete2');
     }
 }
