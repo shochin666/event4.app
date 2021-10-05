@@ -50,7 +50,7 @@ $event = $events->where('id', $event_id)->first()
             <form method="POST" action="{{ route('delete2', $event->id) }}">
                 @csrf
                 <button type="submit" class="mt-20 mx-auto rounded-lg  lg:rounded-none xl:rounded-none sm:shadow-lg 
-                md:shadow-lg lg:shadow-none xl:shadow-none bg-green-300 lg:bg-white xl:bg-white 2xl:bg-white border md:border-none xl:border-none border-gray-400 w-full flex justify-around text-white
+                md:shadow-lg lg:shadow-none xl:shadow-none bg-green-500 lg:bg-white xl:bg-white 2xl:bg-white border md:border-none xl:border-none border-gray-400 w-full flex justify-around text-white
                 lg:text-gray-600 xl:text-gray-600 2xl:text-gray-600  md:hover:bg-indigo-100 lg:hover:bg-indigo-100 xl:hover:bg-indigo-100 btn  whitespace-nowrap py-10 lg:py-0 xl:py-0 text-5xl lg:text-2xl xl:text-2xl font-light">キャンセル</button>
             </form>
             

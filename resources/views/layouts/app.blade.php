@@ -19,18 +19,18 @@
 
   <body class="font-body w-screen">
     <nav class="flex items-center justify-center bg-white  flex-wrap">
-      @auth
+  
+    @auth
       <a class="sm:ml-6 md:ml-6 lg:ml-0 xl:ml-0 flex w-auto rounded items-center justify-center" href="/home">
       <img class="sm:w-88 md:w-80 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 lg:pt-5 xl:pt-5 mt-6 sm:mb-4 md:mb-4 lg:mb-0 xl:mb-0" src="/images/logo.png" alt="ロゴ"></a>
-      @endauth
+    @endauth
         
       @guest
       <button
         class="text-gray-500 inline-flex p-3 rounded lg:hidden xl:hidden ml-auto outline-none nav-toggler"
         data-target="#navigation"
       >
-        <span class="hover:hidden material-icons">reorder</span>
-      </button>
+      <i class="hover:hidden material-icons  sm:text-9xl md:text-9xl">reorder</i>      </button>
       <div
         class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
         id="navigation"
@@ -41,22 +41,22 @@
               <a href="{{ route('login') }}"
                       class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
                   >
-                      <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">ログイン</span>
+                      <span class="whitespace-nowrap text-6xl lg:text-sm pl-10 lg:pl-0 align-middle sm:font-thin md:font-thin lg:font-normal xl:font-normal">ログイン</span>
               </a>
                 @if (Route::has('register'))
               <a href="{{ route('register') }}"
                     class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2"
                 >
-                    <span class="whitespace-nowrap text-2xl lg:text-sm pl-10 lg:pl-0">登録</span>
+                    <span class="whitespace-nowrap text-6xl lg:text-sm pl-10 lg:pl-0 align-middle sm:font-thin md:font-thin lg:font-normal xl:font-normal">登録</span>
                 </a>
               </div>
             </div>
             @endif
         
           <div class="flex ml-auto mr-10 sm:hidden md:hodden lg:block xl:block">
-            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2 sm:font-thin md:font-thin lg:font-normal xl:font-normal" href="{{ route('login') }}">{{ __('ログイン') }}</a>
           @if (Route::has('register'))
-            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2" href="{{ route('register') }}">{{ __('登録') }}</a>
+            <a class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-400 hover:text-white block sm:my-2 sm:font-thin md:font-thin lg:font-normal xl:font-normal" href="{{ route('register') }}">{{ __('登録') }}</a>
           </div>
                     
                             @endif
