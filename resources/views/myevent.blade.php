@@ -12,8 +12,8 @@
         <!-- 投稿がない時に表示させる内容 -->
         <div class="flex justify-center mt-24">
             <div class="flex flex-col">
-                <p class="text-gray-500 text-2xl flex justify-center">イベントに参加していません</p>
-                <p class="flex justify-center mt-4 text-gray-500">タイムラインからイベントに参加しよう</p>
+                <p class="text-gray-400 mt-64 lg:mt-0 xl:mt-0 text-4xl lg:text-2xl xl:text-2xl flex justify-center">イベントに参加していません</p>
+                <p class="flex justify-center text-2xl lg:text-lg xl:text-lg mt-4 text-gray-400">タイムラインからイベントに参加しよう</p>
             </div>
         </div>
         @else

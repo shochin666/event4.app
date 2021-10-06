@@ -21,9 +21,9 @@
         @if($event_num == 0)
         <div class="flex justify-center mt-16">
             <div class="flex flex-col">
-                <p class="text-gray-500 text-2xl flex justify-center">まだ投稿がありません</p>
-                <p class="justify-center mt-4 text-gray-500 sm:hidden md:hidden lg:block xl:block">右上の作成ボタンから新しくイベントを作成しよう</p>
-                <p class="justify-center mt-4 text-gray-500 sm:block md:block lg:hidden xl:hidden">右下の作成ボタンから新しくイベントを作成しよう</p>
+                <p class="text-gray-400 mt-64 lg:mt-0 xl:mt-0 text-4xl lg:text-2xl xl:text-2xl flex justify-center">まだ投稿がありません</p>
+                <p class="justify-center sm:hidden md:hidden lg:block xl:block flex text-2xl lg:text-lg xl:text-lg mt-4 text-gray-400">右上の作成ボタンから新しくイベントを作成しよう</p>
+                <p class="sm:block md:block lg:hidden xl:hidden flex justify-center text-2xl lg:text-lg xl:text-lg mt-4 text-gray-400">右下の作成ボタンから新しくイベントを作成しよう</p>
             </div>
         </div>
         @else
