@@ -24,7 +24,7 @@
                     </div>
          
 
-               <form action="{{ route('setEvent.post') }}" method="POST" class="flex flex-col  justify-center">
+               <form action="{{ route('setEvent.post') }}" method="POST" class="flex flex-col justify-center">
                @csrf
                <div class="flex justify-center mx-24 lg:mx-64 xl:mx-96 lg:flex-row xl:flex-row flex-col">
                     <div class="px-auto flex flex-col mr-0 lg:mr-10 xl:mr-10">
