@@ -21,7 +21,7 @@
                     <span class="flex justify-center mb-8 lg:mb-4 xl:mb-4">開催日：{{ $input['date'] }}</span>
                     <span class="flex justify-center mb-8 lg:mb-4 xl:mb-4">開催場所：{{ $input['place'] }}</span>
                     <span class="flex justify-center mb-8 lg:mb-4 xl:mb-4">募集人数：{{ $input['people'] }} 人</span>
-                    <span class="flex justify-center mb-8 lg:mb-4 xl:mb-4">コメント：{{ $input['detail'] }}</span>
+                    <span class="flex justify-center px-10 mb-8 lg:mb-4 xl:mb-4"><span class="whitespace-nowrap">コメント：</span><span class="break-all">{{ $input['detail'] }}</span></span>
                </div>
                <div class="flex flex-col lg:flex-row xl:flex-row mx-40">
                     <!-- このボタンをおしたらリダイレクトされるときにvalueを保持したい -->
