@@ -1,59 +1,55 @@
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# Name（event4.app/event4/npm Laravel TailwindCSS）
 
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
+"event4"は環境開発に何度か失敗し、最終的に完成した時のエイリアスのファイル名の由来する。
 
-"hoge"が何かを簡潔に紹介する
 
-# DEMO
-
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+<!-- デモ動画などがあるといい -->
 
 # Features
 
-"hoge"のセールスポイントや差別化などを説明する
+"event4"はユーザーなら誰でもホストとしてイベントを開催でき、ホストは最小限の入力作業で参加者を簡単に募集することができるユーザー参加型のアプリケーションです。
 
 # Requirement
 
-"hoge"を動かすのに必要なライブラリなどを列挙する
-
-* huga 3.5.2
-* hogehuga 1.0.2
+* Node.js 14.16.1
+* npm 6.14.12
+* PHP 7.3.11
+* TailwindCSS 2.2.7
 
 # Installation
 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+Node.jsのインストールは[こちら](https://nodejs.org/ja/download/)
+
+
+npmインストール
 
 ```bash
-pip install huga_package
+npm install
+```
+
+
+PHPのインストールは[こちら](https://www.php.net/manual/ja/install.php)
+
+
+TailwindCSSインストール([TailwindCSS](https://tailwindcss.jp/))
+```bash
+npm install tailwindcss
 ```
 
 # Usage
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
+簡単な登録を終えたらホーム画面より、スマートフォンの方は右下の水色のアイコン、PCの方は右上の"イベント作成"よりイベントの詳細をすぐに設定、投稿ができます。
+マイリスト機能で気になったイベントを保存することもできます。
 
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+git clone https://github.com/shochin666/event4.app.git
 ```
 
-# Note
+<!-- # Note
 
-注意点などがあれば書く
+注意点などがあれば書く -->
 
 # Author
 
-作成情報を列挙する
-
-* 作成者
-* 所属
-* E-mail
-
-# License
-ライセンスを明示する
-
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
+* Sho Ogawa
+* email:shoogawa111@gmail.com
