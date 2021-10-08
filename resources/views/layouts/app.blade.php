@@ -22,7 +22,7 @@
   
     @auth
       <a class="sm:ml-6 md:ml-6 lg:ml-0 xl:ml-0 flex w-auto rounded items-center justify-center" href="/home">
-      <img class="sm:w-88 md:w-80 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 lg:pt-5 xl:pt-5 mt-6 sm:mb-4 md:mb-4 lg:mb-0 xl:mb-0" src="/images/logo.png" alt="ロゴ"></a>
+      <img class="sm:w-88 md:w-80 lg:w-44 xl:w-44 lg:mt-6 xl:mt-6 lg:pt-5 xl:pt-5 mt-6 sm:mb-4 md:mb-4 lg:mb-0 xl:mb-0 ml-8 lg:ml-0 xl:ml-0" src="/images/logo.png" alt="ロゴ"></a>
     @endauth
         
       @guest

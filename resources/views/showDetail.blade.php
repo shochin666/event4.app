@@ -27,8 +27,8 @@ $event = $events->where('id', $event_id)->first()
         </div>
         <div class="detail mt-32 lg:mt-20 xl:mt-20">
             <p class="text-4xl lg:text-2xl xl:text-2xl text-gray-500 2xl:ml-32">ホストから</p>
-            <div class="rounded-xl bg-pink-50 max-w-3xl min-w-2xl h-24 container mx-auto mt-3 flex flex-col justify-around px-10">
-                <p class="text-gray-600 text-3xl lg:text-lg xl:text-lg px-2 py-16 break-all">{{ $event->detail }}</p>
+            <div class="rounded-xl bg-pink-50 max-w-3xl min-w-2xl h-24 container mx-auto mt-5 flex flex-col justify-around text-3xl lg:text-lg xl:text-lg px-2 py-16">
+                <p class="text-gray-600 text-3xl lg:text-lg xl:text-lg px-10 break-all">{{ $event->detail }}</p>
             </div>
         </div>
         @auth

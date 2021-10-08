@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\JoinEvent;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator; 
 
@@ -26,9 +28,13 @@ class EventController extends Controller
 
     public function showDetailDelete($id)
     {
+        $users = User::all();
         $events = Event::all();
         $event_id = $id;
-        return view('detailDelete', compact('events', 'event_id'));
+
+        $_myevents = JoinEvent::where('event_id', $event_id)->get();
+
+        return view('detailDelete', compact('events', 'event_id', '_myevents', 'users'));
     }
 
     
