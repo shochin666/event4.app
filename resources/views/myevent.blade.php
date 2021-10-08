@@ -2,8 +2,8 @@
 
 @section('content')
 
-<main class="px-auto w-full m-0 p-0 w-140 mb-40">
-    <p class="ml-20 lg:ml-32 xl:ml-32 text-5xl lg:text-2xl xl:text-2xl text-gray-500 pt-10 sm:font-thin md:font-thin lg:font-normal xl:font-normal mb-10">参加中のイベント</p>
+<main class="px-auto w-full m-0 p-0 w-140 mb-40 grid grid-cols-1 gap-10">
+    <p class="ml-20 lg:ml-32 xl:ml-32 text-5xl lg:text-2xl xl:text-2xl text-gray-500 pt-10 sm:font-thin md:font-thin lg:font-normal xl:font-normal">参加中のイベント</p>
 
     <?php $event_num = count($myevents);
         ?>
@@ -13,11 +13,13 @@
         <div class="flex justify-center mt-24">
             <div class="flex flex-col">
                 <p class="text-gray-400 mt-64 lg:mt-0 xl:mt-0 text-4xl lg:text-2xl xl:text-2xl flex justify-center">イベントに参加していません</p>
-                <p class="flex justify-center text-2xl lg:text-lg xl:text-lg mt-4 text-gray-400">タイムラインからイベントに参加しよう</p>
+                <p class="flex justify-center mt-4 text-gray-400">タイムラインからイベントに参加しよう</p>
             </div>
         </div>
         @else
         @endif
+
+
 
         @foreach($myevents as $event)
         <div class="sm:block md:block lg:hidden xl:hidden">
@@ -30,7 +32,7 @@
                         <div class="flex flex-col mx-auto"> 
                             <div class="flex flex-col mt-3 lg:mt-4 xl:mt-4 whitespace-nowrap">
                                 <div class="flex mx-auto">
-                                    <div class="w-10 h-10 border-l-4 border-indigo-300">　</div>
+                                    <div class="w-10 h-10 border-l-4 border-indigo-300"></div>
                                     <div class=" text-gray-500 text-5xl  mb-2 sm:font-thin md:font-thin lg:font-normal xl:font-normal">開催日 {{ $event->date }}</div>
                                 </div>
                                 
